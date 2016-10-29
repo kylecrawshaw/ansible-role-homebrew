@@ -5,6 +5,10 @@
     path: "{{ homebrew_brew_bin_path }}/brew"
   register: homebrew_binary
 
+- name: Install homewbrew if binary is missing
+  shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: homebrew_binary.stat.exists == false
+
 - name: Force update brew after installation.
   command: "{{ homebrew_brew_bin_path }}/brew update --force"
   when: homebrew_binary.stat.exists == false
