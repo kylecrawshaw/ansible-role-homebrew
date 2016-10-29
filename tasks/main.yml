@@ -44,8 +44,8 @@
 
 # Use command module instead of homebrew_cask so appdir can be used.
 - name: Install configured cask applications.
-  brew_cask:
-    name: {{ item }}
+  homebrew_cask:
+    name: "{{ item }}"
     install_options: "appdir={{ homebrew_cask_appdir }}"
     path: "{{ homebrew_brew_bin_path }}"
   with_items: "{{ homebrew_cask_apps }}"
