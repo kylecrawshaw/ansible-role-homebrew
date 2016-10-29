@@ -1,6 +1,6 @@
 # Ansible Role: Homebrew
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-homebrew.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-homebrew)
+[![Build Status](https://travis-ci.org/kylecrawshaw/ansible-role-homebrew.svg?branch=master)](https://travis-ci.org/kylecrawshaw/ansible-role-homebrew)
 
 Installs [Homebrew](http://brew.sh/) on macOS, and configures packages, taps, and cask apps according to supplied variables.
 
