@@ -24,7 +24,7 @@
 - name: Ensure configured homebrew packages are installed.
   homebrew:
     name: "{{ item }}"
-    state: present
+    state: "{% if type(item) == dict and item.get('state') %}{{ item['state'] }}{% else %}present{% endif %}"
     install_options: "{{ homebrew_package_options[item]|default(omit)|join(',')}}"
   with_items: "{{ homebrew_installed_packages }}"
 
